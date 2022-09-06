@@ -1,1 +1,1 @@
-# gua_python
+# GU|Аналитика|3029 PYTHON
