@@ -51,10 +51,12 @@ def task1(week_day=None):
 
 
 def task2():
-    for x in (0, 1):
-        for y in (0, 1):
-            for z in (0, 1):
-                result = not (x or y or z) == (not x) and (not y) and (not z)
+    for x in (False, True):
+        for y in (False, True):
+            for z in (False, True):
+                result = (
+                    (not (x or y or z)) == ((not x) and (not y) and (not z))
+                )
                 mes = (
                     f'\u00ac({x} \u2228 {y} \u2228 {z}) = '
                     f'(\u00ac {x}) \u2227 (\u00ac {y}) \u2227 (\u00ac {z})'
