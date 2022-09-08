@@ -6,7 +6,7 @@
 - 7 -> да
 - 1 -> нет
 ---------------
-Напишите программу для. проверки истинности утверждения
+Напишите программу для проверки истинности утверждения
 ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z для всех значений предикат.
 ---------------
 Напишите программу, которая принимает на вход координаты точки (X и Y),
@@ -34,11 +34,12 @@ from math import sqrt
 
 def task1(week_day=None):
     days_off = (6, 7,)
+    week_days = range(1, 8)
     try:
         if not isinstance(week_day, int):
             raise TypeError('Аргументом функции должен быть номер дня недели!')
-        if (week_day < 0):
-            raise ValueError('Номер дня недели не может быть отрицательным!')
+        if week_day not in week_days:
+            raise ValueError('Допустимый интервал дней недели: 1..7!')
         if int(week_day) in days_off:
             mes = 'да'
         else:
