@@ -55,8 +55,8 @@ def task2():
             for z in (0, 1):
                 result = not (x or y or z) == (not x) and (not y) and (not z)
                 mes = (
-                    f'not({x} or {y} or {z}) == '
-                    f'(not {x}) and (not {y}) and (not {z})'
+                    f'\u00ac({x} \u2228 {y} \u2228 {z}) = '
+                    f'(\u00ac {x}) \u2227 (\u00ac {y}) \u2227 (\u00ac {z})'
                 )
                 print(mes, ':', result)
 
@@ -81,10 +81,10 @@ def task3(x=None, y=None):
 
 def task4(quater=None):
     quaters = {
-        1: u'[0 < x < +\u221e], [0 < y < +\u221e]',
-        2: u'[-\u221e < x < 0], [0 < y < -\u221e]',
-        3: u'[-\u221e < x < 0], [-\u221e < y < 0]',
-        4: u'[0 < x < +\u221e], [-\u221e < y < 0]'
+        1: '[0 < x < +\u221e], [0 < y < +\u221e]',
+        2: '[-\u221e < x < 0], [0 < y < -\u221e]',
+        3: '[-\u221e < x < 0], [-\u221e < y < 0]',
+        4: '[0 < x < +\u221e], [-\u221e < y < 0]'
     }
     values_range = quaters.get(quater)
     if values_range:
