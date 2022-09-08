@@ -51,9 +51,9 @@ def task1(week_day=None):
 
 
 def task2():
-    for x in (False, True):
-        for y in (False, True):
-            for z in (False, True):
+    for x in (0, 1):
+        for y in (0, 1):
+            for z in (0, 1):
                 result = (
                     (not (x or y or z)) == ((not x) and (not y) and (not z))
                 )
