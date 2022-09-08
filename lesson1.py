@@ -97,7 +97,7 @@ def task4(quater=None):
 
 
 def dist2points(*args):
-    if len(args):
+    if len(args) == 2:
         point1, point2 = args
         try:
             for val in (*point1, *point2):
@@ -110,7 +110,9 @@ def dist2points(*args):
         except Exception as error:
             return_value = error
     else:
-        return_value = 'Укажите координаты точек в виде: (x1, y1), (x2, y2)'
+        return_value = (
+            'Укажите координаты 2-х точек в виде: (x1, y1), (x2, y2)'
+        )
     return return_value
 
 
@@ -143,4 +145,5 @@ if __name__ == '__main__':
     print()
     print('ЗАДАНИЕ 5:')
     print(dist2points())
+    print(dist2points((7, 2), (-3, 7), (6, 9)))
     print(dist2points((7, 2), (-3, 7)))
