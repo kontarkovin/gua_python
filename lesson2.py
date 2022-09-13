@@ -61,13 +61,16 @@ def task2(num=None):
 
 
 def task3(num=None):
+    def num_format(num):
+        return int(num) if not num % 1 else round(num, 2)
+
     try:
         if (not isinstance(num, int)) or (num <= 0):
             raise TypeError(
                 'Аргументом функции должно быть '
                 'целое положительное!'
             )
-        result = {n: round((1 + 1 / n) ** n, 2) for n in range(1, num + 1)}
+        result = {n: num_format((1 + 1 / n) ** n) for n in range(1, num + 1)}
     except Exception as error:
         print(error)
     else:
