@@ -83,18 +83,21 @@ def task4(num=None):
     try:
         f = open('file.txt', 'rt')
         for line in f:
-            if not line.strip().isdigit():
-                raise ValueError(
-                    f'Значение "{line.strip()}" в файле - не целое число!'
+            if line.strip().isdigit():
+                index_list.append(int(line.strip()))
+            else:
+                mes = (
+                    f'Значение "{line.strip()}" в файле - не целое число! '
+                    'Исключено из обработки.'
                 )
-            index_list.append(int(line.strip()))
+                print(mes)
         f.close()
-        if not index_list:
-            result = None
-        else:
-            result = 1
+        if index_list:
             for idx in index_list:
+                result = 1
                 result *= random_values[idx]
+        else:
+            result = None
         print('Список значений:', random_values)
         print('Позиции для перемножения:', tuple(index_list))
         print('Результат:', result)
