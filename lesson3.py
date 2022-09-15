@@ -27,7 +27,6 @@
 
 
 def task1(my_list: list):
-    print(my_list)
     new_list = []
     i = 1
     while i <= len(my_list) - 1:
